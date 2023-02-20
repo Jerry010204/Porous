@@ -20,7 +20,7 @@ vectors = [
 for x in range(0, x_boundary):
     for y in range(0, y_boundary):
         order_of_cell = y + (x) * (y_boundary)
-        Sphere = "Sphere-" + str(order_of_cell)
+        My_Pore = "Sphere-" + str(order_of_cell)
         vector_index = y % 33
         order = y // 33
         vector_list = list(vectors[vector_index])
@@ -29,8 +29,8 @@ for x in range(0, x_boundary):
         if x >= 1 and y <= 32 :
             vector_list[0] += 100
         vectors[vector_index] = tuple(vector_list)
-        a1.translate(instanceList=(Sphere, ), vector=vectors[vector_index])
-        a1 = mdb.models['Model-1'].rootAssembly 
+        my_model.translate(vector=vectors[vector_index], instanceList = (My_Pore))
+        my_model = mdb.models['porous_structure'].rootAssembly 
         if y + 1 == y_boundary:
             number_of_go_up = (y_boundary / 33) -1
             for k in range(0, vector_index + 1):
