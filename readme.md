@@ -37,4 +37,6 @@ for x in range(0, x_boundary):
                 vector_list = list(vectors[k])
                 vector_list[1] -= (100 * number_of_go_up)
                 vectors[k] = tuple(vector_list)
+                
+                
 ```
